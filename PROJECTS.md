@@ -113,5 +113,4 @@ update_campaign(campaign_id: ID, search_strategy: "WB_MAXIMUM_CONVERSION_RATE", 
 <!-- Опишите конвенцию именования -->
 <!-- Пример: -->
 <!-- - UTM-метка = slug кампании, латиницей: `dostavka_msk`, `brand_spb` -->
-<!-- - Файл кампании: `campaigns/<utm_метка>.md` -->
 <!-- - Формат имени: `[Продукт] — [Аудитория/Тематика]` -->

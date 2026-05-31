@@ -58,7 +58,7 @@ Workflow-гайд для управления кампаниями через MC
 | `sitelinks` | Быстрые ссылки (get / add / delete) |
 | `ad_extensions` | Уточнения (get / add / delete) |
 | `get_geo_regions` | Поиск регионов для гео-таргетинга |
-| `add_tasks` | Создать задачи мониторинга после изменений |
+| `workspace_add_tasks` | Создать задачи мониторинга после изменений |
 
 ---
 
@@ -138,11 +138,11 @@ Workflow-гайд для управления кампаниями через MC
    | Быстрая ссылка: описание | 60 |
    | Уточнение | 25 |
 
-6. **Создать файл кампании:** `campaigns/<utm_slug>.md` по шаблону `campaigns/template.md`.
+6. **Зафиксировать кампанию в Workspace MCP:** `workspace_sync_campaigns` (факты после get_campaigns) и `workspace_upsert_campaign` (стратегия и выводы в `context_summary_md`).
 
 7. **Создать задачу мониторинга:**
    ```
-   add_tasks([{
+   workspace_add_tasks([{
      title: "Проверить статистику кампании <имя>",
      due_date: "<через 7 дней>",
      campaign_id: <id>
@@ -190,7 +190,7 @@ Workflow-гайд для управления кампаниями через MC
    | ATTENTION | CPA выше нормы, но не критично | Проверить поисковые запросы, минус-слова |
    | CRITICAL | CPA сильно выше нормы | Срочно: минус-слова, пересмотр ключевых, проверка лендинга |
 
-5. **Обновить файл кампании** `campaigns/<utm>.md` — добавить строку в таблицу результатов.
+5. **Записать результат в Workspace MCP:** цифры за период — `workspace_save_analytics_snapshot`, изменение и вывод — `workspace_record_decision`.
 
 ---
 

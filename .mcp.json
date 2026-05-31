@@ -20,6 +20,13 @@
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
+    },
+    "workspace": {
+      "type": "http",
+      "url": "https://lidfly.ru/mcp/workspace",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
     }
   }
 }

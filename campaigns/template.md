@@ -1,3 +1,17 @@
+> ⚠️ **Устарело. Журнал кампаний переехал в Workspace MCP (`https://lidfly.ru/mcp/workspace`).**
+> Не создавай файлы `campaigns/<utm>.md`. Веди память кампании в облаке LidFly — она общая для всех ИИ-клиентов и видна в `/app`:
+>
+> | Раздел шаблона ниже | Инструмент Workspace |
+> |---|---|
+> | Шапка, бюджет, стратегия, посадочная | `workspace_upsert_campaign` |
+> | История изменений | `workspace_record_decision` + `workspace_update_decision_effect` |
+> | Результаты по периодам | `workspace_save_analytics_snapshot` |
+> | Где сейчас | `workspace_get_context` |
+> | Что проверяем и когда | `workspace_add_tasks` |
+> | Бриф / документы | `workspace_save_document` |
+>
+> Старый файл импортируй разово через `workspace_import_legacy_markdown`. Структура ниже оставлена только как справочник — что именно фиксировать в Workspace.
+
 # Кампания: [Название кампании] ([ID кампании])
 
 **UTM:** `[utm_campaign]` | **Цель:** [Название цели] ([ID цели]) | **Счётчик:** [Название счётчика] ([ID счётчика])

@@ -56,7 +56,7 @@ description: >-
 - недельный бюджет ниже ориентира в 10 целевых конверсий для конверсионной автостратегии;
 - пользователь просит РСЯ, широкий автотаргетинг, конкурентный трафик или запись в живой аккаунт;
 - пользователь просит медийную рекламу, мобильное приложение, маркетплейс, фид/товарные объявления или ретаргетинг, а источник конверсий, интеграция, фид, трекер или цели не подтверждены;
-- ты собираешься вызвать write-tool: `add_campaign`, `add_unified_campaign`, `add_adgroup(s)`, `add_keywords(_batch)`, `add_ads`, `add_responsive_ad`, `sitelinks action:add/delete`, `ad_extensions action:add/delete`, `update_*`, `manage_*`, `set_*`, `add_tasks`.
+- ты собираешься вызвать write-tool: `add_campaign`, `add_unified_campaign`, `add_adgroup(s)`, `add_keywords(_batch)`, `add_ads`, `add_responsive_ad`, `sitelinks action:add/delete`, `ad_extensions action:add/delete`, `update_*`, `manage_*`, `set_*`, `workspace_add_tasks`.
 
 ## 1. Опрос клиента
 
@@ -269,7 +269,7 @@ description: >-
 5. `add_keywords_batch` — фразы по кластерам.
 6. `add_ads` — 2-3 объявления на группу.
 7. `manage_ads action:moderate` — только после отдельного подтверждения модерации.
-8. `add_tasks` — задачи мониторинга.
+8. `workspace_add_tasks` — задачи мониторинга.
 
 Качество объявлений:
 
