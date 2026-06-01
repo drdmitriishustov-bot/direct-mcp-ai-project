@@ -57,7 +57,7 @@ description: "Создание семантического ядра как seni
 | `wordstat_regions` | Региональный спрос и приоритизация гео |
 | `wordstat_regions_tree` | Справочник регионов; формат узла `{ value, label, children }` |
 
-Для действующих кампаний используй `yandex-direct` и `yandex-metrika`:
+Для действующих кампаний используй `yandex-direct-campaign-builder` и `yandex-metrika`:
 
 | Данные | Инструменты |
 |---|---|
@@ -146,7 +146,7 @@ description: "Создание семантического ядра как seni
 
 ## Cross-References
 
-- Для операций с кампаниями, группами, ключами и минусами используй skill `yandex-direct`.
+- Для операций с кампаниями, группами, ключами и минусами используй skill `yandex-direct-campaign-builder`.
 - Для анализа поведения, CPA, целей и UTM используй skill `yandex-metrika`.
 - Для упущенного спроса, сезонности и каннибализации можно использовать skill `demand-research`.
 - Для SEO-страниц и контентных кластеров используй skill `seo-optimizer`.

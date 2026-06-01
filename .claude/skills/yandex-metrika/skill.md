@@ -199,7 +199,7 @@ metrika_get_popular_pages(
 
 - **demand-research** — если CPA высокий, исследуй спрос и ищи новые ключи
 - **serp-monitor** — если позиции падают, конверсии тоже упадут
-- **yandex-direct** — создание и управление кампаниями
+- **yandex-direct-campaign-builder** — создание и управление кампаниями
 
 ## Запись результата в Workspace
 

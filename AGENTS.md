@@ -91,7 +91,7 @@
 
 | Скилл | За что отвечает | Где детали |
 |---|---|---|
-| `yandex-direct` | Кампании Директа, статистика, запросы, ключи, минус-слова | `agent-direct_wordstat.md`, `METRIKA-ADS-RULES.md` |
+| `yandex-direct-campaign-builder` | Создание, аудит, запуск, оптимизация кампаний Директа | `agent-direct_wordstat.md`, `METRIKA-ADS-RULES.md` |
 | `vk-ads` | Кампании VK Ads, таргетинг, ретаргетинг, look-alike | `agent-vk.md`, `VK-ADS-RULES.md` |
 | `yandex-metrika` | UTM-аналитика, CPA, конверсии, сравнение периодов | `PROJECTS.md`, `METRIKA-ADS-RULES.md` |
 | `demand-research` | Спрос, сезонность, каннибализация, упущенные запросы | `METRIKA-ADS-RULES.md` |
