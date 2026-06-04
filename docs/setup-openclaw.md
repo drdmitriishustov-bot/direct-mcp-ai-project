@@ -17,7 +17,7 @@ cp .openclaw/openclaw.example.json .openclaw/openclaw.json
       "yandex-direct": {
         "enabled": true,
         "env": {
-          "YANDEX_DIRECT_TOKEN": "YOUR_API_KEY"
+          "LIDFLY_TOKEN": "YOUR_API_KEY"
         }
       }
     }
@@ -25,7 +25,7 @@ cp .openclaw/openclaw.example.json .openclaw/openclaw.json
 }
 ```
 
-API-ключ получите в [личном кабинете direct-mcp](https://lidfly.ru).
+API-ключ получите в [личном кабинете direct-mcp](https://lidfly.ru). Под v3 это единый ключ LidFly — один эндпоинт `https://lidfly.ru/mcp/v3` покрывает Директ, VK, Вордстат, Workspace и публикацию.
 
 > **Важно:** Файл `.openclaw/openclaw.json` содержит ваш токен — не коммитьте его в git. В репозитории лежит только `.openclaw/openclaw.example.json` с плейсхолдером.
 

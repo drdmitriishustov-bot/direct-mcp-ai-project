@@ -1,7 +1,7 @@
 ---
 name: article-writer
 description: Написание SEO-статей для публикации на Lidfly. Сбор семантики через Wordstat, генерация текста и обложки, удаление AI-маркеров, публикация. Используй когда пользователь просит написать статью, создать материал или подготовить контент для публикации.
-metadata: {"openclaw":{"emoji":"📝","requires":{"anyBins":["npx"],"env":["YANDEX_DIRECT_TOKEN","LIDFLY_TOKEN"]}}}
+metadata: {"openclaw":{"emoji":"📝","requires":{"anyBins":["npx"],"env":["LIDFLY_TOKEN"]}}}
 ---
 
 # Article Writer (MCP)
@@ -15,17 +15,16 @@ metadata: {"openclaw":{"emoji":"📝","requires":{"anyBins":["npx"],"env":["YAND
 - Удаление AI-маркеров перед публикацией (используй скилл `ai-markers-remove`)
 - Публикация готовой статьи на Lidfly
 
-## Подключение к MCP-серверам
+## Подключение к MCP-серверу
 
-Нужны два эндпоинта одного сервера:
+Один эндпоинт на всё — Яндекс Директ, Wordstat и публикация на Lidfly (включая `generate_ad_image`):
 
-- **Яндекс Директ + Wordstat:** `https://direct-mcp.aatex.ru/mcp`, заголовок `Authorization: Bearer $YANDEX_DIRECT_TOKEN`
-- **Lidfly (публикация + `generate_ad_image`):** `https://direct-mcp.aatex.ru/mcp/lidfly`, заголовок `Authorization: Bearer $LIDFLY_TOKEN`
+- `https://lidfly.ru/mcp/v3`, заголовок `Authorization: Bearer $LIDFLY_TOKEN`
 
 Если клиент не поддерживает HTTP MCP напрямую, используйте мост:
 
 ```bash
-npx -y mcp-remote https://direct-mcp.aatex.ru/mcp/lidfly --header "Authorization: Bearer $LIDFLY_TOKEN"
+npx -y mcp-remote https://lidfly.ru/mcp/v3 --header "Authorization: Bearer $LIDFLY_TOKEN"
 ```
 
 ## Workflow

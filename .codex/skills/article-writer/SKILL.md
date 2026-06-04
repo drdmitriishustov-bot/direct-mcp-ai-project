@@ -7,9 +7,9 @@ description: "Написание SEO-статей для публикации н
 
 Полный цикл: тема — семантика — текст — картинка — анти-AI — публикация на Lidfly.
 
-**MCP-серверы:**
-- `yandex-direct` — Wordstat (`wordstat_top_requests`, `wordstat_dynamics`)
-- `lidfly` — публикация статьи + генерация картинок (`generate_ad_image`, Gemini Flash / nano banana 2)
+**MCP-сервер:** `lidfly` — единый эндпоинт v3:
+- Wordstat (`wordstat_top_requests`, `wordstat_dynamics`)
+- публикация статьи + генерация картинок (`generate_ad_image`, Gemini Flash / nano banana 2)
 
 **Юридическая проверка:** перед финальной публикацией сверься с `LEGAL.md`.
 
@@ -90,7 +90,7 @@ description: "Написание SEO-статей для публикации н
 
 ### Шаг 4. Промпт для картинки
 
-Генерация — через `generate_ad_image` (Gemini Flash Image Preview / nano banana 2), доступен на эндпоинте `lidfly` (а также `yandex-direct` и `vk-ads` — это shared-инструмент).
+Генерация — через `generate_ad_image` (Gemini Flash Image Preview / nano banana 2), доступен на едином эндпоинте `lidfly` (v3).
 
 **Квота:** 5 бесплатных вызовов/месяц, далее 6 ₽ с баланса **за вызов** (не за файл). Один вызов может отдать до 6 файлов разных пропорций через `crop_to`.
 

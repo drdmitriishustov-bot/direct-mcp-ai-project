@@ -43,7 +43,7 @@ ffmpeg -i "<video_path>" -vn -acodec libmp3lame -ab 96k -ar 16000 -ac 1 -y "/tmp
 ### Шаг 2. Загрузить аудио на распознавание
 
 ```
-mcp__lidfly__request_upload_audio({
+request_upload_audio({
   filename: "<basename>.mp3",
   title: "<short title for ЛК>",
   language: "ru",
@@ -62,7 +62,7 @@ curl -s -T "/tmp/<basename>.mp3" "<upload_url>"
 ### Шаг 3. Получить расшифровку
 
 ```
-mcp__lidfly__get_transcription({ id: "<transcription_id>" })
+get_transcription({ id: "<transcription_id>" })
 ```
 
 Если `processing` — подождать и проверить ещё раз. НЕ зацикливаться, НЕ использовать sleep-loops в Bash (заблокировано харнессом). Просто вызвать get_transcription повторно через одну итерацию.
@@ -83,7 +83,7 @@ RESULTS/<basename>-transcription.txt
 - Уникальные термины и бренды (продукты, технологии, имена)
 - Боль/проблему, которую решает видео
 
-Сформировать 8-15 гипотез поисковых запросов и вызвать `mcp__yandex-direct__wordstat_top_requests` 2-3 раза по 5 фраз. Цели:
+Сформировать 8-15 гипотез поисковых запросов и вызвать `wordstat_top_requests` (через `call_tool`) 2-3 раза по 5 фраз. Цели:
 1. Найти ключи с частотой 1 000+ показов/мес — это широкие "магниты"
 2. Найти длинные хвосты 50-500 показов/мес — это целевая аудитория
 3. Собрать ассоциации (раздел "похожие запросы") — там часто попадаются неочевидные ключи

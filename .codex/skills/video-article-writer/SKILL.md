@@ -98,12 +98,12 @@ ffmpeg -i "<video_path>" -vn -acodec libmp3lame -ab 96k -ar 16000 -ac 1 -y "/tmp
 
 ## Шаг 2. Расшифровать через LidFly
 
-Если нужные audio tools не загружены, сначала найди их через `tool_search` по запросу `lidfly audio transcription request_upload_audio get_transcription`.
+Если нужные audio tools не загружены, сначала найди их через `search_tools` по запросу `lidfly audio transcription request_upload_audio get_transcription`.
 
 1. Запроси upload URL:
 
 ```js
-mcp__lidfly__request_upload_audio({
+request_upload_audio({
   filename: "<basename>.mp3",
   title: "<короткое название видео>",
   language: "ru",
@@ -122,7 +122,7 @@ curl -s -T "/tmp/<basename>.mp3" "<upload_url>"
 3. Получи текст:
 
 ```js
-mcp__lidfly__get_transcription({ id: "<transcription_id>" })
+get_transcription({ id: "<transcription_id>" })
 ```
 
 Если статус `processing`, проверь ещё раз через одну итерацию. Не запускай бесконечные sleep-loop.
@@ -168,7 +168,7 @@ mcp__lidfly__get_transcription({ id: "<transcription_id>" })
 - стоп-темы и нерелевантные интенты, которые нельзя тащить в статью;
 - интент каждого кластера: обучающий, сравнительный, how-to, инструментальный, коммерческий.
 
-Используй Wordstat через MCP `yandex-direct`, когда доступен. Если Wordstat недоступен, явно пометь семантику как оценочную.
+Используй Wordstat через MCP `lidfly`, когда доступен. Если Wordstat недоступен, явно пометь семантику как оценочную.
 
 Сохрани результат:
 
@@ -277,7 +277,7 @@ mcp__lidfly__get_transcription({ id: "<transcription_id>" })
 Используй только MCP `lidfly`:
 
 ```js
-mcp__lidfly__generate_ad_image({
+generate_ad_image({
   format: "lidfly_hero_1920x1080",
   prompt: "<полный промпт с композицией и короткими надписями>"
 })

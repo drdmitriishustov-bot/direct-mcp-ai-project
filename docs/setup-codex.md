@@ -7,8 +7,8 @@
 ```json
 {
   "mcpServers": {
-    "yandex-direct": {
-      "url": "https://lidfly.ru/mcp",
+    "lidfly": {
+      "url": "https://lidfly.ru/mcp/v3",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
@@ -24,8 +24,8 @@
 Если проектный `.codex/mcp.json` не подхватывается (известная проблема в ранних версиях `codex-cli`), добавьте сервер глобально:
 
 ```bash
-codex mcp add yandex-direct -- \
-  npx -y mcp-remote https://lidfly.ru/mcp \
+codex mcp add lidfly -- \
+  npx -y mcp-remote https://lidfly.ru/mcp/v3 \
   --header "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -33,7 +33,7 @@ codex mcp add yandex-direct -- \
 
 ```bash
 codex mcp list --json
-codex mcp get yandex-direct --json
+codex mcp get lidfly --json
 ```
 
 ## 3. Запуск
@@ -53,8 +53,9 @@ codex -C /path/to/your/project
 ```
 
 Ожидаемо:
-- Сервер `yandex-direct` виден
-- Доступны tools: `get_campaigns`, `get_adgroups`, `get_ads`, `get_keywords`, `update_campaign` и др.
+- Сервер `lidfly` виден
+- Доступны 6 meta-инструментов v3: `search_tools`, `get_tool_schema`, `call_tool`, `call_write_tool`, `get_methodology`, `subscription_status`
+- Провайдерский каталог (`get_campaigns`, `vk_get_campaigns`, `wordstat_top_requests`, `workspace_get_context` и др.) в списке не виден — AI находит инструменты через `search_tools` и вызывает через `call_tool` / `call_write_tool`
 
 ## 5. Инструкции для агента
 

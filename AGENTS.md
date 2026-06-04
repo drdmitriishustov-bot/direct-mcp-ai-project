@@ -7,6 +7,21 @@
 - Логика конверсий, счётчики, цели и позиционирование → `PROJECTS.md`
 - Юридическая проверка публичного контента → `LEGAL.md`
 
+## Вызов инструментов (v3)
+
+Все платформы подключены через единый эндпоинт `https://lidfly.ru/mcp/v3`. Клиент видит только **6 meta-инструментов**, а не каталог провайдеров:
+
+`search_tools` · `get_tool_schema` · `call_tool` · `call_write_tool` · `get_methodology` · `subscription_status`
+
+Провайдерских инструментов (`get_campaigns`, `vk_get_campaigns`, `wordstat_top_requests`, `metrika_*`, `generate_ad_image`, `workspace_*` и т.д.) в списке нет — они достижимы только по строковому имени через meta-слой:
+
+- **Найти** инструмент под задачу — `search_tools({ query })`; схему перед первым вызовом — `get_tool_schema({ tool_name })`.
+- **Чтение** (get/list/stats, Вордстат, аналитика, `workspace_get_context`) — `call_tool({ tool_name, arguments })`.
+- **Запись и действия** (create/update/suspend/add/moderate, публикация, генерация картинок, запись в Workspace) — `call_write_tool({ tool_name, arguments })`.
+- Методология провайдера — `get_methodology`; диагностика подписки по запросу — `subscription_status`.
+
+Поэтому все имена инструментов в этом файле, в `agent-*.md`, `METRIKA-ADS-RULES.md`, `VK-ADS-RULES.md` и в скиллах (`get_campaigns`, `add_campaign`, `wordstat_top_requests`, …) — это `tool_name` для `call_tool`/`call_write_tool`, а не прямые MCP-вызовы. Не вызывай `mcp__lidfly__get_campaigns` напрямую — такого имени в списке нет; используй `call_tool`/`call_write_tool`.
+
 ## Память проекта и ответ пользователю
 
 Память клиентов, кампаний, решений и истории работ хранится в **Workspace MCP** (облако LidFly), а не в локальных файлах. Это единый источник правды, общий для всех ИИ-клиентов (Claude, Codex, ChatGPT, Cursor) и видимый в кабинете `/app`.

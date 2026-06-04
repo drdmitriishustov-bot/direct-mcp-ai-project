@@ -47,7 +47,7 @@ ffmpeg -i "<video_path>" -vn -acodec libmp3lame -ab 96k -ar 16000 -ac 1 -y "/tmp
 Используй MCP `lidfly`, если он доступен:
 
 ```js
-mcp__lidfly__request_upload_audio({
+request_upload_audio({
   filename: "<basename>.mp3",
   title: "<short title for ЛК>",
   language: "ru",
@@ -68,7 +68,7 @@ curl -s -T "/tmp/<basename>.mp3" "<upload_url>"
 ### Шаг 3. Получить расшифровку
 
 ```js
-mcp__lidfly__get_transcription({ id: "<transcription_id>" })
+get_transcription({ id: "<transcription_id>" })
 ```
 
 Если статус `processing`, подожди одну итерацию и проверь ещё раз. Не запускай бесконечные циклы и sleep-loops в Bash.
@@ -91,7 +91,7 @@ RESULTS/<basename>-transcription.txt
 - Уникальные термины и бренды: продукты, технологии, имена
 - Боль или проблему, которую решает видео
 
-Сформировать 8-15 гипотез поисковых запросов и вызвать `wordstat_top_requests` 2-3 раза по 5 фраз через MCP `yandex-direct`.
+Сформировать 8-15 гипотез поисковых запросов и вызвать `wordstat_top_requests` 2-3 раза по 5 фраз через MCP `lidfly`.
 
 Цели:
 1. Найти ключи с частотой 1 000+ показов/мес — широкие магниты

@@ -4,13 +4,12 @@
       "yandex-direct": {
         "enabled": true,
         "env": {
-          "YANDEX_DIRECT_TOKEN": "YOUR_API_KEY"
+          "LIDFLY_TOKEN": "YOUR_API_KEY"
         }
       },
       "article-writer": {
         "enabled": true,
         "env": {
-          "YANDEX_DIRECT_TOKEN": "YOUR_API_KEY",
           "LIDFLY_TOKEN": "YOUR_API_KEY"
         }
       },

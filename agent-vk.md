@@ -33,7 +33,7 @@
 
 ## MCP-инструменты
 
-MCP-сервер: `vk-ads` (эндпоинт `https://lidfly.ru/mcp/vk`)
+MCP-сервер: `lidfly` (единый эндпоинт `https://lidfly.ru/mcp/v3`)
 
 ### Кампании
 

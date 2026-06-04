@@ -12,12 +12,12 @@
 ```json
 {
   "servers": {
-    "yandex-direct": {
+    "lidfly": {
       "command": "npx",
       "args": [
         "-y",
         "mcp-remote",
-        "https://lidfly.ru/mcp",
+        "https://lidfly.ru/mcp/v3",
         "--header",
         "Authorization: Bearer YOUR_API_KEY"
       ]
@@ -55,7 +55,7 @@ npx --version
 покажи мои кампании
 ```
 
-Copilot должен обнаружить инструменты MCP-сервера и вызвать `get_campaigns`.
+Copilot должен обнаружить 6 meta-инструментов v3 и через них (`search_tools` → `call_tool`) показать ваши кампании.
 
 ## 6. Устранение проблем
 

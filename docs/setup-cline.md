@@ -11,8 +11,9 @@
 ```json
 {
   "mcpServers": {
-    "yandex-direct": {
-      "url": "https://lidfly.ru/mcp",
+    "lidfly": {
+      "type": "http",
+      "url": "https://lidfly.ru/mcp/v3",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
@@ -37,7 +38,7 @@
 покажи мои кампании
 ```
 
-Cline должен обнаружить MCP-сервер `yandex-direct` и предложить использовать `get_campaigns`.
+Cline должен обнаружить сервер `lidfly` (6 meta-инструментов v3) и через них показать ваши кампании.
 
 ## 5. Альтернативный способ — через UI
 
@@ -45,8 +46,8 @@ Cline должен обнаружить MCP-сервер `yandex-direct` и пр
 2. Нажмите на иконку настроек (шестерёнка)
 3. Перейдите в раздел MCP Servers
 4. Добавьте сервер:
-   - Name: `yandex-direct`
-   - URL: `https://lidfly.ru/mcp`
+   - Name: `lidfly`
+   - URL: `https://lidfly.ru/mcp/v3`
    - Headers: `Authorization: Bearer YOUR_API_KEY`
 
 ## 6. Инструкции для агента

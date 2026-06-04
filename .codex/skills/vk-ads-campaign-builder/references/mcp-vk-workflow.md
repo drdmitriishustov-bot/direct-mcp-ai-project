@@ -8,9 +8,9 @@
 
 В lite-режиме:
 
-1. `mcp__vk_ads.search_tools({ query })` — найти инструменты по задаче.
-2. `mcp__vk_ads.get_tool_schema({ tool_name })` — получить схему перед первым вызовом.
-3. `mcp__vk_ads.call_tool({ tool_name, arguments })` — вызвать инструмент.
+1. `mcp__lidfly__search_tools({ query })` — найти инструменты по задаче.
+2. `mcp__lidfly__get_tool_schema({ tool_name })` — получить схему перед первым вызовом.
+3. `mcp__lidfly__call_tool({ tool_name, arguments })` — вызвать инструмент.
 
 ## Базовые инструменты
 

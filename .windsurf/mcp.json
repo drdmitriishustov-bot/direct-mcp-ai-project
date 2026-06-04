@@ -1,7 +1,8 @@
 {
   "mcpServers": {
-    "yandex-direct": {
-      "url": "https://direct-mcp.aatex.ru/mcp",
+    "lidfly": {
+      "type": "http",
+      "url": "https://lidfly.ru/mcp/v3",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }

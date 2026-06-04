@@ -7,8 +7,9 @@
 ```json
 {
   "mcpServers": {
-    "yandex-direct": {
-      "url": "https://lidfly.ru/mcp",
+    "lidfly": {
+      "type": "http",
+      "url": "https://lidfly.ru/mcp/v3",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
@@ -33,7 +34,7 @@
 покажи мои кампании
 ```
 
-Cascade должен обнаружить MCP-сервер и вызвать `get_campaigns`.
+Cascade должен обнаружить сервер `lidfly` (6 meta-инструментов v3) и через них показать ваши кампании.
 
 ## 4. Если MCP не подхватился
 

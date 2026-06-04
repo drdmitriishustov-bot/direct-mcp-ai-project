@@ -8,9 +8,9 @@
 
 В lite-режиме:
 
-1. `mcp__vk-ads__search_tools({ query })` — найти инструменты по задаче.
-2. `mcp__vk-ads__get_tool_schema({ tool_name })` — получить схему перед первым вызовом.
-3. `mcp__vk-ads__call_tool({ tool_name, arguments })` — вызвать инструмент.
+1. `mcp__lidfly__search_tools({ query })` — найти инструменты по задаче.
+2. `mcp__lidfly__get_tool_schema({ tool_name })` — получить схему перед первым вызовом.
+3. `mcp__lidfly__call_tool({ tool_name, arguments })` — вызвать инструмент.
 
 Не вызывай `subscription_status` для обычных задач. Это только диагностика подключения/подписки по явной просьбе или после auth-ошибки.
 

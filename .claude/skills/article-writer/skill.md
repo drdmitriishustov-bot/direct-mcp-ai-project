@@ -7,9 +7,9 @@ description: "Написание SEO-статей с двумя режимами
 
 Полный цикл: тема → цель → семантика → текст → (картинка) → анти-AI → публикация на Lidfly **или** сохранение markdown-файла на диск.
 
-**MCP-серверы:**
-- `yandex-direct` — Wordstat (`wordstat_top_requests`, `wordstat_dynamics`)
-- `lidfly` — публикация статьи + генерация картинок (`generate_ad_image`, Gemini Flash / nano banana 2) — **только для target=lidfly**
+**MCP-сервер:** `lidfly` — единый эндпоинт v3:
+- Wordstat (`wordstat_top_requests`, `wordstat_dynamics`)
+- публикация статьи + генерация картинок (`generate_ad_image`, Gemini Flash / nano banana 2) — **только для target=lidfly**
 
 **Юридическая проверка:** перед финальной публикацией/сохранением сверься с `LEGAL.md`.
 
@@ -114,7 +114,7 @@ description: "Написание SEO-статей с двумя режимами
 
 > **Если target = `file`** — пропустить шаг целиком, перейти к шагу 6 (анти-AI). Обложка для markdown-файла не нужна.
 
-Генерация — через `generate_ad_image` (Gemini Flash Image Preview / nano banana 2), доступен на эндпоинте `lidfly` (а также `yandex-direct` и `vk-ads` — это shared-инструмент).
+Генерация — через `generate_ad_image` (Gemini Flash Image Preview / nano banana 2), доступен на едином эндпоинте `lidfly` (v3).
 
 **Квота:** 5 бесплатных вызовов/месяц, далее 6 ₽ с баланса **за вызов** (не за файл). Один вызов может отдать до 6 файлов разных пропорций через `crop_to`.
 
@@ -215,9 +215,9 @@ description: "Написание SEO-статей с двумя режимами
 
 #### 7A. target = `lidfly` — публикация на Lidfly
 
-1. **Проверить авторизацию** — если MCP `lidfly` требует OAuth, вызвать `mcp__lidfly__authenticate` и провести пользователя через flow.
+1. **Проверить авторизацию** — если требуется OAuth, вызвать инструмент `authenticate` (через `call_tool`) и провести пользователя через flow.
 
-2. **Найти инструмент публикации** — в списке `mcp__lidfly__*` найти создание статьи/поста (ключевые слова: `create`, `post`, `article`, `publish`).
+2. **Найти инструмент публикации** — через `search_tools` найти создание статьи/поста (ключевые слова: `create`, `post`, `article`, `publish`), затем вызвать его через `call_write_tool`.
 
 3. **Опубликовать:**
    - `title`: H1 статьи
